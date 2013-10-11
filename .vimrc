@@ -1,6 +1,6 @@
 execute pathogen#infect()
 syntax enable
-nmap ü :
+nmap ö :
 let mapleader=","
 let g:EasyMotion_leader_key = '<Leader>'
 set number
