@@ -12,16 +12,23 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# Number of commands to remember in the command history
+export HISTSIZE=10000
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# The number of lines contained in the history file
+export HISTFILESIZE=999999
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# Prepend a timestamp on each history event
+export HISTTIMEFORMAT="%Y-%m-%dT%H:%M:%S "
+
+# Ignore commands starting with a space, duplicates,
+# and a few others.
+export HISTIGNORE="[ ]*:&:bg:fg:ls -l:ls -al:ls -la:ll:la"
+
+export IGNOREEOF=10
+
 shopt -s checkwinsize
+shopt -s histappend
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -88,6 +95,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lm='ll | less'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -112,3 +120,19 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+PS1="\[\033[1;30m\][\[\033[1;34m\]\u\[\033[1;30m\]@\[\033[0;35m\]\h\[\033[1;30m\]]\[\033[0;37m\]\W\[\033[1;30m\]\$\[\033[0m\]>"
+
+#Start tmux
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+    # if no session is started, start a new session
+    test -z ${TMUX} && tmux
+
+    # when quitting tmux, try to attach
+	while test -z ${TMUX}; do
+        tmux attach || break
+    done
+fi
+
+echo;fortune;echo;
