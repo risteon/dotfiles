@@ -63,6 +63,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+color_prompt=yes;
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -78,6 +80,8 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+PS1="${debian_chroot:+($debian_chroot)}\[\033[1;30m\][\[\033[1;34m\]\u\[\033[1;30m\]@\[\033[0;35m\]\h\[\033[1;30m\]]\[\033[0;37m\]\w\[\033[1;30m\]\$\[\033[0m\]>"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -121,7 +125,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PS1="\[\033[1;30m\][\[\033[1;34m\]\u\[\033[1;30m\]@\[\033[0;35m\]\h\[\033[1;30m\]]\[\033[0;37m\]\W\[\033[1;30m\]\$\[\033[0m\]>"
 
 #Start tmux
 # TMUX
@@ -129,10 +132,11 @@ if which tmux 2>&1 >/dev/null; then
     # if no session is started, start a new session
     test -z ${TMUX} && tmux
 
+# Das ist nervig, und man kann sich gar nicht mehr von einer tmux Session abkoppeln
     # when quitting tmux, try to attach
-	while test -z ${TMUX}; do
-        tmux attach || break
-    done
+#	while test -z ${TMUX}; do
+#        tmux attach || break
+#   done
 fi
 
 echo;fortune;echo;

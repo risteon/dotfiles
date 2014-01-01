@@ -16,11 +16,14 @@ set lazyredraw
 set background=dark
 set tabstop=4
 filetype plugin indent on
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
 	\ if line("'\"") > 0 && line("'\"") <= line("$") |
 	\ exe "normal! g`\"" |
 	\ endif
+
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2

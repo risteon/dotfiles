@@ -80,10 +80,6 @@ set -s escape-time 0
 # Fenstergröße wenn mehrere Clients dieselbe Session betrachten
 setw -g aggressive-resize on
 
-# Powerline
-source ~/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
-set-option -g default-terminal "screen-256color"
-
 # xclip
 # damit xclip lokal arbeiten kann
 set-environment -g DISPLAY :0.0
