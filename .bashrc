@@ -138,5 +138,3 @@ if which tmux 2>&1 >/dev/null; then
 #        tmux attach || break
 #   done
 fi
-
-echo;fortune;echo;
