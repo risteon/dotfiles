@@ -107,6 +107,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias li='du -cksh * | sort -h'
+alias gis='git status -uno'
+
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
@@ -126,12 +128,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+function _update_ps1() {
+     export PS1="$(~/.dotfiles/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+}
+
+export PROMPT_COMMAND="_update_ps1"
 
 #Start tmux
 # TMUX
 if which tmux 2>&1 >/dev/null; then
     # if no session is started, start a new session
-    test -z ${TMUX} && tmux
+    test -z ${TMUX} && tmux -2
 
 # Das ist nervig, und man kann sich gar nicht mehr von einer tmux Session abkoppeln
     # when quitting tmux, try to attach
