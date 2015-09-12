@@ -65,6 +65,9 @@ autocmd BufReadPost *
 	\ endif
 
 " set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 let g:airline_powerline_fonts = 1
 
 " Always show statusline
