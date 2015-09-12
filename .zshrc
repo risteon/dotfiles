@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/christoph/.oh-my-zsh
 
+# Customize interactive python shell
+export PYTHONSTARTUP=~/.pythonrc
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -82,3 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias tmux="tmux -2"
+
+. /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
