@@ -71,6 +71,9 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+# Enable completion for ./ and ../ directories
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
