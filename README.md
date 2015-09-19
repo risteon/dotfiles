@@ -1,14 +1,31 @@
 dotfiles
 ========
-Symlink für Ordner powerline muss in ~/.config erstellt werden
 
-Installieren:
+powerline for use with zsh, vim and tmux up-to-date.
+powerline prompt in zsh
+
+Install packages:
+----------------
   * tmux
-  * powerline
   * vim
+  * python-pip (for powerline)
+  * socat (for powerline)
 
+Python packages (pip install []):
+----------------
+  * psutil
+  * mercurial
+  * bzr
+  * powerline-status
+
+Powerline fonts
+--------------
+$ git clone git@github.com:powerline/fonts.git 
+
+(run install.sh to copy all fonts, choose font in console, e.g. Liberation Mono for powerline)
 
 Clone Tmux Plugin Manager
+------------------------
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-Hit Prefix+I in tmux
+Hit Prefix+I in tmux to install tmux-resurrect
