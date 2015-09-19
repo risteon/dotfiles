@@ -90,5 +90,6 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias tmux="tmux -2"
+alias gis="git status"
 
 . /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
