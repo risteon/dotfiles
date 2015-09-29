@@ -7,4 +7,4 @@ except ImportError:
     print("Module readline not available.")
 else:
     import rlcompleter
-    readline.parse_and_bind("TASTE: complete")  # TASTE ersetzen
+    readline.parse_and_bind("TAB: complete")
