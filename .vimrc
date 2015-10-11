@@ -29,6 +29,7 @@ set mat=2
 set lazyredraw
 set tabstop=4                   " number of visual spaces per tab
 set softtabstop=4               " number of spaces in tab when editing
+set shiftwidth=4
 set expandtab                   " tabs are spaces
 
 " Folding
