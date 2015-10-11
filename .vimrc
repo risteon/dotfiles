@@ -37,6 +37,9 @@ set foldnestmax=15              " 15 nested fold max
 set foldmethod=syntax           " fold based on syntax
 nnoremap <space> za             " space open/closes folds
 
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
 " Indentation
 filetype plugin indent on
 filetype plugin on
