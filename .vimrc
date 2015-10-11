@@ -5,7 +5,7 @@ execute pathogen#infect()
 syntax enable
 
 nmap ö :
-let mapleader=","
+let mapleader=","               " leader is comma
 let g:EasyMotion_leader_key = '<Leader>'
 
 set number
@@ -13,32 +13,45 @@ set mouse=a
 set mousehide
 set ignorecase
 set noswapfile
+set showcmd
+set cursorline
+set wildmenu                    " visual autocomplete for command menu
 set smartcase
-set hlsearch
-set incsearch
-set showmatch
+set showmatch                   " higlight matching [{()}]
+
+" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " search as characters are entered 
+nnoremap <leader><space> :nohlsearch<CR>    " turn off search highlight
+
 set mat=2
 set lazyredraw
-set tabstop=4
+set tabstop=4                   " number of visual spaces per tab
+set softtabstop=4               " number of spaces in tab when editing
+set expandtab                   " tabs are spaces
 
-"colorscheme wombat256mod
-"let g:kolor_alternative_matchparen=1
-"colorscheme kolor
-"hi Normal ctermbg=NONE
+" Folding
+set nofoldenable                " enable folding
+set foldnestmax=15              " 15 nested fold max
+set foldmethod=syntax           " fold based on syntax
+nnoremap <space> za             " space open/closes folds
+
+" Indentation
+filetype plugin indent on
+filetype plugin on
+filetype indent on
+
+" Colorscheme SOLARIZED
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" VIM-LATEX
 if has('gui_running')
   set grepprg=grep\ -nH\ $*
     filetype indent on
   let g:tex_flavor='latex'
 endif
-
-filetype plugin indent on
-filetype plugin on
-filetype indent on
-
 
 au BufEnter *.tex set autowrite
 let g:Tex_DefaultTargetFormat = 'pdf'
@@ -60,7 +73,7 @@ let g:clang_conceal_snippets=1
 set completeopt=longest,menuone
 
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files 
 autocmd BufReadPost *
 	\ if line("'\"") > 0 && line("'\"") <= line("$") |
 	\ exe "normal! g`\"" |
