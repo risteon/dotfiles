@@ -1,5 +1,6 @@
 "Plugins, load from .vim/bundle
-execute pathogen#infect()
+call pathogen#infect()          " use pathogen
+call pathogen#incubate()        " use pathogen
 
 " Syntax highlighting
 syntax enable
