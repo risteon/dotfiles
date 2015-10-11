@@ -1,15 +1,16 @@
+"Plugins, load from .vim/bundle
 execute pathogen#infect()
 
-
+" Syntax highlighting
 syntax enable
+
 nmap ö :
 let mapleader=","
 let g:EasyMotion_leader_key = '<Leader>'
-set number
 
+set number
 set mouse=a
 set mousehide
-
 set ignorecase
 set noswapfile
 set smartcase
@@ -18,14 +19,15 @@ set incsearch
 set showmatch
 set mat=2
 set lazyredraw
-set background=dark
 set tabstop=4
 
 "colorscheme wombat256mod
 "let g:kolor_alternative_matchparen=1
 "colorscheme kolor
 "hi Normal ctermbg=NONE
-colorscheme vividchalk
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 if has('gui_running')
   set grepprg=grep\ -nH\ $*
