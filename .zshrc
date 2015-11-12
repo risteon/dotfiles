@@ -52,7 +52,7 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rvm)
+plugins=(git rvm fasd)
 
 # User configuration
 
@@ -93,5 +93,6 @@ alias tmux="tmux -2"
 alias li='du -cksh * | sort -h'
 alias gis="git status -uno"
 alias gka="gitk --all"
+alias j="z" # jump for FASD
 
 . /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh

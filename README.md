@@ -20,12 +20,18 @@ Python packages (pip install []):
 
 Powerline fonts
 --------------
-$ git clone git@github.com:powerline/fonts.git 
+    $ git clone git@github.com:powerline/fonts.git 
 
 (run install.sh to copy all fonts, choose font in console, e.g. Liberation Mono for powerline)
 
 Clone Tmux Plugin Manager
 ------------------------
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Hit Prefix+I in tmux to install tmux-resurrect
+
+Clone FASD
+-----------
+    $ git clone git@github.com:clvv/fasd.git
+    $ cd fasd
+    $ make install
