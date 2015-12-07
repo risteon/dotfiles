@@ -35,3 +35,9 @@ Clone FASD
     $ git clone git@github.com:clvv/fasd.git
     $ cd fasd
     $ make install
+
+VIM Plugins: Vundle
+-------------------
+Launch vim and run :PluginInstall
+YouCompleteMe: see https://github.com/Valloric/YouCompleteMe
+
