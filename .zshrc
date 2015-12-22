@@ -91,7 +91,7 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 
 alias tmux="tmux -2"
 alias li='du -cksh * | sort -h'
-alias gis="git status -uno"
+alias gis="git status"
 alias gka="gitk --all"
 alias j="z" # jump for FASD
 
