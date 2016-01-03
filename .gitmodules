@@ -1,0 +1,3 @@
+[submodule "i3_config"]
+	path = i3_config
+	url = git@github.com:risteon/i3_config.git
