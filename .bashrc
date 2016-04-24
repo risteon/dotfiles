@@ -130,13 +130,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-function _update_ps1() {
-     export PS1="$(~/.dotfiles/powerline-shell/powerline-shell.py $? 2> /dev/null)"
-}
 
 export TERM="screen-256color"
-export PROMPT_COMMAND="_update_ps1"
 
-source /opt/ros/indigo/setup.bash
-
-export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/home/christoph/Workspace/audi_ic/export
