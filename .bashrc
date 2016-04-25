@@ -106,10 +106,11 @@ alias lm='ll | less'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-alias tmux="tmux -2"
-alias li='du -cksh * | sort -h'
-alias gis='git status -uno'
-alias gka="gitk --all"
+if [ -f ~/dotfiles/sh_alias ]; then
+    source ~/dotfiles/sh_alias
+else
+    print "404: ~/dotfiles/sh_alias not found."
+fi
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

@@ -89,21 +89,10 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias tmux="tmux -2"
-alias li='du -cksh * | sort -h'
-alias gis="git status"
-alias gka="gitk --all"
-alias j="z" # jump for FASD
-
-alias cd..="cd .."
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias .....="cd ../../../../"
-alias ......="cd ../../../../../"
-alias .2="cd ../.."
-alias .3="cd ../../.."
-alias .4="cd ../../../.."
-alias .5="cd ../../../../.."
-
+if [ -f ~/dotfiles/sh_alias ]; then
+    source ~/dotfiles/sh_alias
+else
+    print "404: ~/dotfiles/sh_alias not found."
+fi
 
 . /usr/local/lib/python3.5/dist-packages/powerline/bindings/zsh/powerline.zsh
