@@ -47,7 +47,10 @@ $ sudo make install
 Powerline Python package:
 ----------------
 ```
-$ sudo -H pip3 install powerline-status
+sudo -H pip3 install powerline-status
+sudo -H pip3 install powerline-gitstatus
+ln -s ~/dotfiles/config/powerline ~/.config/powerline
+
 ```
 
 Powerline fonts
