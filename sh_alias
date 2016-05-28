@@ -1,6 +1,5 @@
 # alias definitions
 
-alias tmux="tmux -2"
 alias li='du -cksh * | sort -h'
 alias gis="git status"
 alias gka="gitk --all"
