@@ -48,9 +48,9 @@ nnoremap <leader><space> :nohlsearch<CR>    " turn off search highlight
 
 set mat=2
 set lazyredraw
-set tabstop=4                   " number of visual spaces per tab
-set softtabstop=4               " number of spaces in tab when editing
-set shiftwidth=4
+set tabstop=2                   " number of visual spaces per tab
+set softtabstop=2               " number of spaces in tab when editing
+set shiftwidth=2
 set expandtab                   " tabs are spaces
 
 " Folding
