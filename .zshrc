@@ -95,6 +95,10 @@ else
     print "404: ~/dotfiles/sh_alias not found."
 fi
 
+if [ -f ~/.sh_user ]; then
+    source ~/.sh_user
+fi
+
 . /usr/local/lib/python3.5/dist-packages/powerline/bindings/zsh/powerline.zsh
 
 # source ROS KINETIC 
