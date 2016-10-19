@@ -4,3 +4,6 @@
 [submodule "Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = git@github.com:VundleVim/Vundle.vim.git
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = git@github.com:mbbill/undotree.git

@@ -2,26 +2,13 @@
 set nocompatible                " iMproved, required
 filetype off                    " required
 
+"Plugins, load from .vim/bundle
+execute pathogen#infect()
+
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on       " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-
-"Plugins, load from .vim/bundle
-call pathogen#infect()          " use pathogen
-call pathogen#incubate()        " use pathogen
 
 " Syntax highlighting
 syntax enable
@@ -60,12 +47,19 @@ set foldmethod=syntax           " fold based on syntax
 nnoremap <space> za             " space open/closes folds
 
 " toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
+if has("persistent_undo")
+  set undodir=~/.undodir/
+  set undofile
+endif
 
 " Indentation
 filetype plugin indent on
 filetype plugin on
 filetype indent on
+
+" Access system clipboard
+set clipboard=unnamed
 
 " Colorscheme SOLARIZED
 set background=dark
@@ -75,7 +69,7 @@ colorscheme solarized
 " VIM-LATEX
 if has('gui_running')
   set grepprg=grep\ -nH\ $*
-    filetype indent on
+  filetype indent on
   let g:tex_flavor='latex'
 endif
 
