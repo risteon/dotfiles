@@ -1,13 +1,17 @@
 Install notes for ubuntu 16.04
 =========
 
-dotfiles for tmux2.1/python3/zsh/powerline setup
+This repo primarily provides a configuration for tmux, vim, zsh and powerline.
 
-Tested with gnome-terminal/konsole.
+### Create symlinks in your home directory
+```
+$ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~/dotfiles/.pythonrc ~/dotfiles/.tmux.conf ~
+```
 
-
-Install packages:
+Software and dependencies
 ----------------
+
+### Install via apt:
   * zsh
   * tmux
   * vim-gnome (huge vim version including python3 support, else see building VIM from source)
@@ -17,44 +21,27 @@ Install packages:
 $ sudo apt-get install zsh tmux vim-gnome python3-pip socat
 ```
 
-Create dotfile symlinks
------------------------
-Move any previous config files to a backup location!
-
-```
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.vim ~/.vim
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.pythonrc ~/.pythonrc
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-```
-
-Clone oh-my-zsh:
-----------------
+### Clone oh-my-zsh:
 ```
 $ git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
 
-Install FASD for zsh
------------
+### Install FASD for zsh:
 ```
 $ git clone git@github.com:clvv/fasd.git ~/workspace/fasd
 $ cd fasd
 $ sudo make install
 ```
 
-Powerline Python package:
-----------------
+### Powerline Python package:
 ```
-sudo -H pip3 install powerline-status
-sudo -H pip3 install powerline-gitstatus
-ln -s ~/dotfiles/config/powerline ~/.config/powerline
+$ sudo -H pip3 install powerline-status
+$ sudo -H pip3 install powerline-gitstatus
+$ ln -s ~/dotfiles/config/powerline ~/.config/powerline
 
 ```
 
-Powerline fonts
---------------
+### Powerline fonts
 e.g. Liberation Mono for powerline
 Run install.sh to copy all fonts, choose font in terminal emulator of your choice
 
@@ -63,8 +50,7 @@ $ git clone git@github.com:powerline/fonts.git ~/workspace/powerline_fonts
 $ ~/workspace/powerline_fonts/install.sh
 ```
 
-Clone Tmux Plugin Manager
-------------------------
+### Clone Tmux Plugin Manager
 ```
 $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
@@ -72,12 +58,12 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Hit Prefix+I in tmux to install tmux-resurrect and any other plugins specified in .tmux.conf
 
 
-VIM Plugins: Vundle
--------------------
+### VIM Plugins: Vundle
 Launch vim and run :PluginInstall
+
 YouCompleteMe: see https://github.com/Valloric/YouCompleteMe
-Compile YCM:
-Make sure python-dev is installed
+
+Compile YCM: Make sure python-dev is installed
 
 ```
 $ sudo apt-get install python-dev
@@ -85,8 +71,7 @@ $ cd ~/.vim/bundle/YouCompleteMe
 $ ./install.py --clang-completer
 ```
 
-Optional: Build VIM with Python 3 support from source
--------------------------------
+### Optional: Build VIM with Python 3 support from source
 Prerequisites:
 
 ```
