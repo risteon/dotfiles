@@ -1,4 +1,4 @@
-Install notes for ubuntu 16.04
+Install notes for Ubuntu 16.04
 =========
 
 This repo primarily provides a configuration for tmux, vim, zsh and powerline.
@@ -10,6 +10,10 @@ $ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~
 
 Software and dependencies
 ----------------
+Make sure to checkout submodules:
+```
+$ git submodule update --init --recursive
+```
 
 ### Install via apt:
   * zsh
@@ -28,8 +32,8 @@ $ git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 ### Install FASD for zsh:
 ```
-$ git clone git@github.com:clvv/fasd.git ~/workspace/fasd
-$ cd fasd
+$ git clone git@github.com:clvv/fasd.git ~/fasd
+$ cd ~/fasd
 $ sudo make install
 ```
 
@@ -42,12 +46,11 @@ $ ln -s ~/dotfiles/config/powerline ~/.config/powerline
 ```
 
 ### Powerline fonts
-e.g. Liberation Mono for powerline
-Run install.sh to copy all fonts, choose font in terminal emulator of your choice
+e.g. Liberation Mono for powerline. Run install.sh to copy all fonts, then choose font in terminal emulator of your choice.
 
 ```
-$ git clone git@github.com:powerline/fonts.git ~/workspace/powerline_fonts
-$ ~/workspace/powerline_fonts/install.sh
+$ git clone git@github.com:powerline/fonts.git ~/powerline_fonts
+$ ~/powerline_fonts/install.sh
 ```
 
 ### Clone Tmux Plugin Manager
