@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/christoph/.oh-my-zsh
+export ZSH=$HOME/dotfiles/oh-my-zsh
 
 # Customize interactive python shell
 export PYTHONSTARTUP=~/.pythonrc
