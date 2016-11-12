@@ -3,6 +3,11 @@ Install notes for Ubuntu 16.04
 
 This repo primarily provides a configuration for tmux, vim, zsh and powerline.
 
+Make sure to checkout submodules:
+```
+$ git submodule update --init --recursive
+```
+
 ### Create symlinks in your home directory
 ```
 $ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~/dotfiles/.pythonrc ~/dotfiles/.tmux.conf ~
@@ -10,10 +15,6 @@ $ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~
 
 Software and dependencies
 ----------------
-Make sure to checkout submodules:
-```
-$ git submodule update --init --recursive
-```
 
 ### Install via apt:
   * zsh
@@ -23,11 +24,6 @@ $ git submodule update --init --recursive
   * socat (for powerline)
 ```
 $ sudo apt-get install zsh tmux vim-gnome python3-pip socat
-```
-
-### Clone oh-my-zsh:
-```
-$ git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
 
 ### Install FASD for zsh:
