@@ -1,0 +1,2 @@
+! RXVT configuration
+#include ".Xresources.d/rxvt-unicode"

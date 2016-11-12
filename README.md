@@ -10,7 +10,7 @@ $ git submodule update --init --recursive
 
 ### Create symlinks in your home directory
 ```
-$ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~/dotfiles/.pythonrc ~/dotfiles/.tmux.conf ~
+$ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~/dotfiles/.pythonrc ~/dotfiles/.tmux.conf ~/dotfiles/.Xresources ~/dotfiles/.Xresources.d ~
 ```
 
 Software and dependencies
@@ -22,8 +22,9 @@ Software and dependencies
   * vim-gnome (huge vim version including python3 support, else see building VIM from source)
   * python3-pip
   * socat (for powerline)
+  * URxvt terminal emulator
 ```
-$ sudo apt-get install zsh tmux vim-gnome python3-pip socat
+$ sudo apt-get install zsh tmux vim-gnome python3-pip socat rxvt-unicode-256color
 ```
 
 ### Install FASD for zsh:
