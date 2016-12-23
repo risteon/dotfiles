@@ -19,25 +19,27 @@ URxvt*shading:                     25
 
 
 ! Font
-URxvt*font: xft:Liberation\ Mono\ for\ Powerline:pixelsize=14:antialias=True:hinting=True
-URxvt*boldFont: xft:Liberation\ Mono\ for\ Powerline:bold:pixelsize=14:antialias=True:hinting=True
-URxvt.letterSpace:                 -1
+!URxvt*font: xft:Liberation\ Mono\ for\ Powerline:pixelsize=14
+!URxvt*boldFont: xft:Liberation\ Mono\ for\ Powerline:bold:pixelsize=14
+!URxvt*font:     xft:Terminus:medium:size=11:antialias=True
+!URxvt*letterSpace:                 -1
+URxvt.font: xft:Inconsolata for Powerline:size=13,xft:unifont:size=12
 
 ! Hide scrollbar
 URxvt.scrollBar:                   False
 
 ! Scrollback position
 ! do not scroll with output
-URxvt*scrollTtyOutput: false
+URxvt*scrollTtyOutput:             false
 
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
+URxvt*scrollWithBuffer:            true
 
 ! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyKeypress:           true
 
 ! Fade text when window focus is lost
-URxvt.fading:                       25
+URxvt.fading:                      25
 
 ! Low contrast theme, based on Zenburn <http://slinky.imukuppi.org/zenburnpage/>
 ! Modified from <https://gist.github.com/564084>
@@ -45,7 +47,8 @@ URxvt.foreground:       #0c0c0c
 URxvt.color0:           #3f3f3f
 URxvt.color1:           #af0000
 URxvt.color2:           #00b45a
-URxvt.color3:           #dfcf8f
+!URxvt.color3:           #dfcf8f
+URxvt.color3:           #ffff00
 URxvt.color4:           #506070
 URxvt.color5:           #dc8cc3
 URxvt.color6:           #8cd0d3
@@ -53,7 +56,8 @@ URxvt.color7:           #dcdccc
 URxvt.color8:           #709080
 URxvt.color9:           #cc5454
 URxvt.color10:          #4d9f4d
-URxvt.color11:          #f0dfaf
+!URxvt.color11:          #f0dfaf
+URxvt.color11:          #ffd700
 URxvt.color12:          #4186be
 URxvt.color13:          #ec93d3
 URxvt.color14:          #93e0e3
@@ -61,3 +65,8 @@ URxvt.color15:          #ffffff
 
 !Disables the insanely annoying Ctrl+Shift shortcut that enters ISO14755 mode
 URxvt.iso14755:         False
+
+Xft.dpi: 96
+!Xft.antialias: true
+!Xft.hinting: true
+!Xft.hintstyle: hintfull
