@@ -80,18 +80,6 @@ let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
 let g:Tex_GotoError = 0
 let g:Tex_ViewRule_pdf = 'evince'
 
-
-" CLANG_COMPLETE
-let g:clang_library_path='/usr/lib/llvm-3.5/lib'
-let g:clang_user_options='|| exit 0'
-let g:clang_complete_auto = 1
-let g:clang_complete_copen = 1
-let g:clang_snippets=1
-let g:clang_snippets_engine='ultisnips'
-let g:clang_conceal_snippets=1
-
-set completeopt=longest,menuone
-
 " allows cursor change in tmux mode (vertical bar cursor mode even in tmux)
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
