@@ -73,6 +73,11 @@ if has('gui_running')
   let g:tex_flavor='latex'
 endif
 
+command! -nargs=1 Silent
+\   execute 'silent !' . <q-args>
+\ | execute 'redraw!'
+nnoremap <leader>m :w \| :Silent make slides<CR>
+
 au BufEnter *.tex set autowrite
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf'
