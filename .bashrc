@@ -131,6 +131,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-export TERM="screen-256color"
+[ -z "$TMUX" ] && export TERM="rxvt-unicode-256color"
 

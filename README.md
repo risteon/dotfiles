@@ -1,4 +1,4 @@
-Install notes for Ubuntu 16.04
+Install notes for Ubuntu 17.04
 =========
 
 This repo primarily provides a configuration for tmux, vim, zsh and powerline.
@@ -77,39 +77,5 @@ $ ./install.py --clang-completer
 Set global .gitignore
 ```
 git config --global core.excludesfile ~/dotfiles/gitignore_global
-```
-
-### Optional: Build VIM with Python 3 support from source
-Prerequisites:
-
-```
-$ sudo apt-get install checkinstall mercurial python-dev python3-dev ruby ruby-dev libx11-dev libxt-dev libgtk2.0-dev libncurses5 ncurses-dev
-```
-Build VIM from source:
-```
-$ hg clone https://vim.googlecode.com/hg/ ~/workspace/vim
-$ cd ~/workspace/vim
-$ ./configure \
---enable-perlinterp \
---enable-python3interp \
---enable-rubyinterp \
---enable-cscope \
---enable-gui=auto \
---enable-gtk2-check \
---enable-gnome-check \
---with-features=huge \
---enable-multibyte \
---with-x \
---with-compiledby="xorpd" \
---with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
---prefix=/opt/vim74
-$ make
-$ make test
-$ sudo checkinstall
-```
-
-Link python3 version
-```
-$ sudo ln -s /opt/vim74/bin/vim /usr/local/bin/vim
 ```
 
