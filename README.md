@@ -73,6 +73,12 @@ $ cd ~/.vim/bundle/YouCompleteMe
 $ ./install.py --clang-completer
 ```
 
+### Git configuration
+Set global .gitignore
+```
+git config --global core.excludesfile ~/dotfiles/gitignore_global
+```
+
 ### Optional: Build VIM with Python 3 support from source
 Prerequisites:
 
