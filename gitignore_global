@@ -1,2 +1,4 @@
 # Ignore jetbrains project files
 **/.idea/
+# Ignore qtcreator project files
+**/CMakeLists.txt.user*
