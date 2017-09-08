@@ -1,9 +1,28 @@
 "Plugins, load using Vundle
-set nocompatible                " iMproved, required
-filetype off                    " required
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"Plugins, load from .vim/bundle
-execute pathogen#infect()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" colorscheme solarized
+Plugin 'altercation/vim-colors-solarized'
+
+" undotree
+Plugin 'mbbill/undotree'
+
+" easymotion
+Plugin 'easymotion/vim-easymotion'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " set the runtime path to include Vundle and initialize
 filetype plugin indent on       " required
