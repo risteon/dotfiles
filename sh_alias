@@ -1,10 +1,8 @@
 # alias definitions
-
 alias li='du -cksh * | sort -h'
-alias gis="git status"
-alias gka="gitk --all"
 alias j="z" # jump for FASD
 
+# change directories
 alias cd..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
@@ -14,3 +12,8 @@ alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
+
+# piping to xclip
+alias xxx="xclip -sel c"
+alias xx="xclip -sel primary"
+
