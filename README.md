@@ -31,7 +31,7 @@ $ sudo apt-get install zsh tmux vim-gnome python3-pip socat rxvt-unicode-256colo
 
 ### Install FASD for zsh:
 ```
-$ git clone git@github.com:clvv/fasd.git ~/fasd
+$ git clone https://github.com/clvv/fasd.git ~/fasd
 $ cd ~/fasd
 $ sudo make install
 ```
@@ -48,7 +48,7 @@ $ ln -s ~/dotfiles/config/powerline ~/.config/powerline
 e.g. Liberation Mono for powerline. Run install.sh to copy all fonts, then choose font in terminal emulator of your choice.
 
 ```
-$ git clone git@github.com:powerline/fonts.git ~/powerline_fonts
+$ git clone https://github.com/powerline/fonts.git ~/powerline_fonts
 $ ~/powerline_fonts/install.sh
 ```
 
@@ -59,6 +59,13 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Hit Prefix+I in tmux to install tmux-resurrect and any other plugins specified in .tmux.conf
 
+
+### VIM: Backup folders
+Create folders for vim backup files
+```
+$ mkdir ~/.vimtmp
+$ mkdir ~/.vimbackup
+```
 
 ### VIM Plugins: Vundle
 Launch vim and run :PluginInstall
