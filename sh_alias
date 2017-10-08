@@ -1,6 +1,7 @@
 # alias definitions
 alias li='du -cksh * | sort -h'
 alias j="z" # jump for FASD
+alias gka="gitk --all"
 
 # change directories
 alias cd..="cd .."
