@@ -98,9 +98,11 @@ fi
 
 . /usr/local/lib/python3.5/dist-packages/powerline/bindings/zsh/powerline.zsh
 
-# source ROS KINETIC 
+# source ROS KINETIC or ROS LUNAR
 if [ -f /opt/ros/kinetic/setup.zsh ]; then
     source /opt/ros/kinetic/setup.zsh
+elif [ -f /opt/ros/lunar/setup.zsh ]; then
+    source /opt/ros/lunar/setup.zsh
 fi
 
 # system specific details
