@@ -2,15 +2,26 @@ Install notes for Ubuntu 17.04
 =========
 
 This repo primarily provides a configuration for tmux, vim, zsh and powerline.
+I recommend to clone it to a folder $HOME/dotfiles.
 
 Make sure to checkout submodules:
 ```
 $ git submodule update --init --recursive
 ```
 
+Clone powerlevel9k theme to oh-my-zsh:
+```
+git clone https://github.com/bhilburn/powerlevel9k.git $HOME/dotfiles/oh-my-zsh/custom/themes/powerlevel9k
+```
+
 ### Create symlinks in your home directory
 ```
 $ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~/dotfiles/.pythonrc ~/dotfiles/.tmux.conf ~/dotfiles/.Xresources ~/dotfiles/.Xresources.d ~/dotfiles/.xbindkeysrc ~
+```
+
+### Symlink powerline config
+```
+$ ln -s ~/dotfiles/config/powerline ~/.config/powerline
 ```
 
 Software and dependencies
@@ -44,12 +55,12 @@ $ ln -s ~/dotfiles/config/powerline ~/.config/powerline
 
 ```
 
-### Powerline fonts
-e.g. Liberation Mono for powerline. Run install.sh to copy all fonts, then choose font in terminal emulator of your choice.
+### Nerd Fonts (Powerline Fonts)
+e.g. ShareTechMono Nerd Font. Choose font in terminal emulator of your choice.
 
 ```
-$ git clone https://github.com/powerline/fonts.git ~/powerline_fonts
-$ ~/powerline_fonts/install.sh
+$ git clone https://github.com/ryanoasis/nerd-fonts.git
+$ ./nerd-fonts/install.sh ShareTechMono
 ```
 
 ### Clone Tmux Plugin Manager
@@ -84,5 +95,12 @@ $ ./install.py --clang-completer
 Set global .gitignore
 ```
 git config --global core.excludesfile ~/dotfiles/gitignore_global
+```
+
+### rxvt-unicode with wide glyph support
+```
+git clone https://github.com/blueyed/rxvt-unicode.git
+cd rxvt-unicode
+./configure --prefix=/usr --enable-everything --enable-256-color --disable-perl
 ```
 
