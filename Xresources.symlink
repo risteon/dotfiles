@@ -1,2 +1,4 @@
 ! RXVT configuration
 #include ".Xresources.d/rxvt-unicode"
+! XTERM configuration
+#include ".Xresources.d/xterm"

@@ -1,21 +1,24 @@
 [submodule "Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
+	path = vim.symlink/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule ".vim/bundle/undotree"]
-	path = .vim/bundle/undotree
+[submodule "vim.symlink/bundle/undotree"]
+	path = vim.symlink/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule ".vim/bundle/vim-easymotion"]
-	path = .vim/bundle/vim-easymotion
+[submodule "vim.symlink/bundle/vim-easymotion"]
+	path = vim.symlink/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
+[submodule "vim.symlink/bundle/vim-colors-solarized"]
+	path = vim.symlink/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/lh-vim-lib"]
-	path = .vim/bundle/lh-vim-lib
+[submodule "vim.symlink/bundle/lh-vim-lib"]
+	path = vim.symlink/bundle/lh-vim-lib
 	url = https://github.com/LucHermitte/lh-vim-lib.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule "vim.symlink/bundle/nerdtree"]
+	path = vim.symlink/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim.symlink/bundle/Vundle.vim"]
+	path = vim.symlink/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git

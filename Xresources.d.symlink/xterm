@@ -1,0 +1,24 @@
+!#######################################################
+!                XTERM configuration                   #
+!#######################################################
+
+! set $TERM
+XTerm.termName: xterm-256color
+
+! ensure that locale is set up for UTF-8
+XTerm.vt100.locale: true
+
+! make 'Alt' key behave as on other terminal emulators
+XTerm.vt100.metaSendsEscape: true
+
+! scrollback history
+XTerm.vt100.saveLines: 4096
+
+! dark background, light text
+XTerm.vt100.reverseVideo: true
+
+! font configuration
+xterm*faceName: Shure Tech Nerd Font
+xterm*faceSize: 14
+xterm*renderFont: true
+
