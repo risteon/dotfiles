@@ -22,3 +22,6 @@
 [submodule "vim.symlink/bundle/Vundle.vim"]
 	path = vim.symlink/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git
