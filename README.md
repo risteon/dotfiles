@@ -7,16 +7,13 @@ I recommend to clone it to a folder $HOME/dotfiles.
 Make sure to checkout submodules:
 ```
 $ git submodule update --init --recursive
+$ cd ~/dotfiles/script
+$ ./bootstrap
 ```
 
-Clone powerlevel9k theme to oh-my-zsh:
+Clone powerlevel9k theme to oh-my-zsh (currently unused)
 ```
 git clone https://github.com/bhilburn/powerlevel9k.git $HOME/dotfiles/oh-my-zsh/custom/themes/powerlevel9k
-```
-
-### Create symlinks in your home directory
-```
-$ ln -s ~/dotfiles/.vimrc ~/dotfiles/.vim ~/dotfiles/.bashrc ~/dotfiles/.zshrc ~/dotfiles/.pythonrc ~/dotfiles/.tmux.conf ~/dotfiles/.Xresources ~/dotfiles/.Xresources.d ~/dotfiles/.xbindkeysrc ~
 ```
 
 ### Symlink powerline config
@@ -40,11 +37,10 @@ Software and dependencies
 $ sudo apt-get install zsh tmux vim-gnome python3-pip socat rxvt-unicode-256color xautomation xbindkeys
 ```
 
-### Install FASD for zsh:
+### Pip
+
 ```
-$ git clone https://github.com/clvv/fasd.git ~/fasd
-$ cd ~/fasd
-$ sudo make install
+$ pip3 install thefuck
 ```
 
 ### Powerline Python package:
@@ -56,7 +52,7 @@ $ ln -s ~/dotfiles/config/powerline ~/.config/powerline
 ```
 
 ### Nerd Fonts (Powerline Fonts)
-e.g. ShareTechMono Nerd Font. Choose font in terminal emulator of your choice.
+e.g. Sauce Code Pro Nerd Font. Choose font in terminal emulator of your choice.
 
 ```
 $ git clone https://github.com/ryanoasis/nerd-fonts.git
