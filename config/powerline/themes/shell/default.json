@@ -1,6 +1,14 @@
 {
 	"segments": {
 		"right": [
+      {
+        "function": "powerline.segments.common.time.date",
+        "priority": 20,
+        "args": {
+          "istime": true,
+          "format": "%H:%M:%S"
+        }
+      },
 			{
 				"function": "powerline.segments.shell.last_pipe_status",
 				"priority": 10
