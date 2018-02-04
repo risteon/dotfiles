@@ -21,6 +21,7 @@ export PYTHONSTARTUP=~/.pythonrc
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="amuse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -42,7 +43,7 @@ HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -99,7 +100,33 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-3]="fg=magenta,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]="fg=yellow,bold"
 
 # =============================================================================
-#                           options and plugins
+#                               antigen
+# =============================================================================
+
+source $DOTFILES_BASEDIR/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle paulirish/git-open
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
+
+# =============================================================================
+#                           miscellaneous
 # =============================================================================
 
 # set this before sourcing fasd. So that its default aliasas are based on the editor
@@ -114,12 +141,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rvm fasd)
-
-# User configuration
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-# export MANPATH="/usr/local/man:$MANPATH"
+# plugins=(git rvm fasd)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -139,13 +161,13 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # =============================================================================
 
 # oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # powerlevel9k
 # source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
 
 # powerline
-source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
+# source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
 
 
 # =============================================================================
