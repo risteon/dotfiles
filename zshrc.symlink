@@ -115,12 +115,13 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle paulirish/git-open
+antigen bundle allcatsarebeautiful/fasd
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen theme robbyrussell
+# Load the theme. Crash when entering git repository?
+# antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
@@ -128,6 +129,13 @@ antigen apply
 # =============================================================================
 #                           miscellaneous
 # =============================================================================
+
+fasd_cache="$HOME/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
 
 # set this before sourcing fasd. So that its default aliasas are based on the editor
 # Preferred editor for local and remote sessions
@@ -167,7 +175,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
 
 # powerline
-# source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
+source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
 
 
 # =============================================================================
