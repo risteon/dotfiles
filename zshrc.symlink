@@ -84,7 +84,7 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_PATTERNS+=("rm -rf *" "fg=white,bold,bg=red")
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]="fg=white"
+ZSH_HIGHLIGHT_STYLES[path]="fg=white,underline"
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]="fg=grey"
 ZSH_HIGHLIGHT_STYLES[alias]="fg=cyan"
 ZSH_HIGHLIGHT_STYLES[builtin]="fg=cyan"
