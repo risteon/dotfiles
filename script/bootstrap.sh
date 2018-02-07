@@ -123,7 +123,14 @@ install_dotfiles () {
   done
 }
 
+create_vim_dirs () {
+  mkdir -p $HOME/.vimbackup
+  mkdir -p $HOME/.vimtmp
+}
+
+
 install_dotfiles
+create_vim_dirs
 
 echo ''
 echo '  All symlinks installed!'
