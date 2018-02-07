@@ -23,9 +23,6 @@ Plugin 'mbbill/undotree'
 " easymotion
 Plugin 'easymotion/vim-easymotion'
 
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-
 " NerdTree
 Plugin 'scrooloose/nerdtree'
 " These two open NERDTree on start if no file specified on launch
@@ -167,10 +164,4 @@ autocmd BufReadPost *
 	\ if line("'\"") > 0 && line("'\"") <= line("$") |
 	\ exe "normal! g`\"" |
 	\ endif
-
-" POWERLINE SETUP
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-let g:airline_powerline_fonts = 1
 

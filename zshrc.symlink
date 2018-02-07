@@ -105,31 +105,11 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-3]="fg=magenta,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]="fg=yellow,bold"
 
 # =============================================================================
-#                               antigen
+#                             powerless prompt
 # =============================================================================
 
-source $DOTFILES_BASEDIR/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle paulirish/git-open
-antigen bundle allcatsarebeautiful/fasd
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme. Crash when entering git repository?
-# antigen theme robbyrussell
-
-# Tell Antigen that you're done.
-antigen apply
+source $DOTFILES_BASEDIR/zsh/powerless/powerless.zsh false # Script with prompt, disable hardcoded colors.
+source $DOTFILES_BASEDIR/zsh/powerless/utilities.zsh true  # Optional scripts (see above), enable dirstack tweaks.
 
 # =============================================================================
 #                           miscellaneous
@@ -143,51 +123,12 @@ else
   export EDITOR='vim'
 fi
 
-# use fasd to edti files with vim
-alias v='f -t -e vim -b viminfo'
-
-# enable fasd in cached mode
-fasd_cache="$HOME/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-  fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
-fi
-source "$fasd_cache"
-unset fasd_cache
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(git rvm fasd)
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # ls dircolors
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/dotfiles/.dircolors && eval "$(dircolors -b ~/dotfiles/.dircolors)" || eval "$(dircolors -b)"
 fi
 # color completions the same way GNU does
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# =============================================================================
-#                                 prompt
-# =============================================================================
-
-# oh-my-zsh
-# source $ZSH/oh-my-zsh.sh
-
-# powerlevel9k
-# source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
-
-# powerline
-source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
-
-# enable thefuck after PS1 is set
-eval $(thefuck --alias)
 
 # =============================================================================
 #                                 aliases
