@@ -14,7 +14,7 @@ export ZSH=$DOTFILES_BASEDIR/oh-my-zsh
 export PYTHONSTARTUP=~/.pythonrc
 
 # =============================================================================
-#                                   zsh options
+#                               zsh options
 # =============================================================================
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -121,6 +121,7 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle paulirish/git-open
 antigen bundle allcatsarebeautiful/fasd
+antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -130,6 +131,14 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that you're done.
 antigen apply
+
+# =============================================================================
+#                         plugin configuration
+# =============================================================================
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=25
+ZSH_AUTOSUGGEST_USE_ASYNC=ON
+bindkey '^J' autosuggest-accept
+bindkey '^@' autosuggest-execute
 
 # =============================================================================
 #                           miscellaneous
