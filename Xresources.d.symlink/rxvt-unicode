@@ -5,6 +5,7 @@
 URxvt.termName:                    rxvt-256color
 ! dark background, light text
 URxvt.reverseVideo:                True
+URxvt.foreground:                  #080808
 
 ! transparency - true or false (default)
 URxvt*transparent:                 True
