@@ -215,13 +215,6 @@ fi
 # =============================================================================
 #                            local and third party
 # =============================================================================
-# source ROS KINETIC or ROS LUNAR
-if [ -f /opt/ros/kinetic/setup.zsh ]; then
-    source /opt/ros/kinetic/setup.zsh
-elif [ -f /opt/ros/lunar/setup.zsh ]; then
-    source /opt/ros/lunar/setup.zsh
-fi
-
 # environment variables, local configuration
 if [ -f ~/.localrc ]; then
     source ~/.localrc
