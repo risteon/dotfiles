@@ -61,6 +61,11 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# use VI MODE (you want this!)
+bindkey -v
+# kill vi mode lag
+export KEYTIMEOUT=1
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
