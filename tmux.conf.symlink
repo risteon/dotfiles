@@ -82,10 +82,6 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
-# copy text to system clipboard
-bind-key -tvi-copy y copy-pipe "xclip -selection clipboard -i"
-bind-key -tvi-copy enter copy-pipe "xclip -selection clipboard -i"
-
 # do not wait for escape sequence
 set -s escape-time 0
 
