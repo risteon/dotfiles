@@ -21,7 +21,7 @@ alias xx="xclip -sel primary"
 
 alias gka="gitk --all"
 
-alias keyboard="setxkbmap -layout us -variant altgr-intl -option nodeadkeys && xmodmap ~/dotfiles/.xmodmap_switch_caps_esc"
+alias keyboard="setxkbmap -layout us -variant altgr-intl -option nodeadkeys && xmodmap ~/dotfiles/xmodmap_switch_caps_esc"
 
 # fasd
 alias o='a -e xdg-open'
