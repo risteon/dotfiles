@@ -128,9 +128,14 @@ create_vim_dirs () {
   mkdir -p $HOME/.vimtmp
 }
 
+fetch_gitmodules() {
+  git submodule update --init --recursive
+}
 
+fetch_gitmodules
 install_dotfiles
 create_vim_dirs
+fzf.symlink/install --64 --key-bindings --completion --no-update-rc
 
 echo ''
 echo '  All symlinks installed!'
