@@ -14,6 +14,34 @@ export ZSH=$DOTFILES_BASEDIR/oh-my-zsh
 export PYTHONSTARTUP=~/.pythonrc
 
 # =============================================================================
+#                               antigen
+# =============================================================================
+
+source $DOTFILES_BASEDIR/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle paulirish/git-open
+antigen bundle allcatsarebeautiful/fasd
+antigen bundle zsh-users/zsh-autosuggestions
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme. Crash when entering git repository?
+# antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
+
+# =============================================================================
 #                               zsh options
 # =============================================================================
 # Set name of the theme to load.
@@ -103,34 +131,6 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-1]="fg=cyan,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-2]="fg=green,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-3]="fg=magenta,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]="fg=yellow,bold"
-
-# =============================================================================
-#                               antigen
-# =============================================================================
-
-source $DOTFILES_BASEDIR/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle paulirish/git-open
-antigen bundle allcatsarebeautiful/fasd
-antigen bundle zsh-users/zsh-autosuggestions
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme. Crash when entering git repository?
-# antigen theme robbyrussell
-
-# Tell Antigen that you're done.
-antigen apply
 
 # =============================================================================
 #                         plugin configuration
