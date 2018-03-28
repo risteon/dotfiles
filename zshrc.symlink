@@ -14,6 +14,12 @@ export ZSH=$DOTFILES_BASEDIR/oh-my-zsh
 export PYTHONSTARTUP=~/.pythonrc
 
 # =============================================================================
+#                               non-antigen plugins
+# =============================================================================
+
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+
+# =============================================================================
 #                               antigen
 # =============================================================================
 
@@ -206,8 +212,8 @@ eval $(thefuck --alias)
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # These aliases are shared with other shells (bash)
-if [ -f ~/dotfiles/sh_alias ]; then
-    source ~/dotfiles/sh_alias
+if [ -f $DOTFILES_BASEDIR/sh_alias ]; then
+    source $DOTFILES_BASEDIR/sh_alias
 else
     print "Warn: ~/dotfiles/sh_alias not found."
 fi

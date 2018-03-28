@@ -93,6 +93,12 @@ Set global .gitignore
 git config --global core.excludesfile ~/dotfiles/gitignore_global
 ```
 
+### FZF
+Skip updating shell configuration files.
+```
+$ ~/.fzf/install
+```
+
 ### rxvt-unicode with wide glyph support
 ```
 git clone https://github.com/blueyed/rxvt-unicode.git
