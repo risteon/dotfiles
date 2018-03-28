@@ -4,10 +4,10 @@ Install notes for Ubuntu 17.04
 This repo primarily provides a configuration for tmux, vim, zsh and powerline.
 I recommend to clone it to a folder $HOME/dotfiles.
 
-Make sure to checkout submodules:
+**Bootstrap**
 ```
-$ git submodule update --init --recursive
-$ cd ~/dotfiles/script
+$ git clone https://github.com/risteon/dotfiles.git $HOME/dotfiles
+$ cd dotfiles/script
 $ ./bootstrap
 ```
 
