@@ -37,6 +37,9 @@ nnoremap <C-n> :NERDTreeToggle <CR>
 "
 Bundle 'LucHermitte/lh-vim-lib'
 
+" Rust file detection, syntax highlighting, formatting
+Plugin 'rust-lang/rust.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()
