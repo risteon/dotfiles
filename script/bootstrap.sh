@@ -126,6 +126,7 @@ install_dotfiles () {
 create_vim_dirs () {
   mkdir -p $HOME/.vimbackup
   mkdir -p $HOME/.vimtmp
+  vim +PlugInstall +qall
 }
 
 fetch_gitmodules() {
