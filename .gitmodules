@@ -28,3 +28,6 @@
 [submodule "fzf.symlink"]
 	path = fzf.symlink
 	url = https://github.com/junegunn/fzf.git
+[submodule "vim.symlink/bundle/rust.vim"]
+	path = vim.symlink/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
