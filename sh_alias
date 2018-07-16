@@ -26,3 +26,5 @@ alias keyboard="setxkbmap -layout us -variant altgr-intl -option nodeadkeys && x
 # fasd
 alias o='a -e xdg-open'
 
+alias did="vim +'normal Go' +'r!date' ~/did.txt"
+
