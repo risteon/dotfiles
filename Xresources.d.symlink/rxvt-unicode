@@ -19,7 +19,8 @@ URxvt*transparent:                 True
 URxvt*shading:                     25
 
 ! Font
-URxvt.font: xft:Sauce Code Pro Nerd Font:size=10:antialias=true:hinting=true
+URxvt.font: xft:Sauce Code Pro Nerd Font:size=11:antialias=true:hinting=true
+URxvt.letterSpace: -0.5
 
 ! Hide scrollbar
 URxvt.scrollBar:                   False

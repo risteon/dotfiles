@@ -111,7 +111,7 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 # git@bitbucket.com/user/plugin  \
 
 run-shell "powerline-daemon -q"
-source "/usr/local/lib/python3.6/dist-packages/powerline/bindings/tmux/powerline.conf"
+source "/usr/local/lib/python3.5/dist-packages/powerline/bindings/tmux/powerline.conf"
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
