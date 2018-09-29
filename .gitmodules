@@ -31,3 +31,6 @@
 [submodule "vim.symlink/bundle/rust.vim"]
 	path = vim.symlink/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "nerd-fonts"]
+	path = nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts.git
