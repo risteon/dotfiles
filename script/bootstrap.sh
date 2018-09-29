@@ -2,7 +2,8 @@
 
 # The MIT License
 # 
-# Copyright (c) Zach Holman, http://zachholman.com
+# Original Work Copyright (c) Zach Holman, http://zachholman.com
+# Modified Work Copyright (c) Christoph Rist
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 # 
@@ -123,6 +124,18 @@ install_dotfiles () {
   done
 }
 
+install_config_files () {
+  info 'installing configuration files'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+  for src in $(find -H "$DOTFILES_ROOT/config" -maxdepth 1 ! -path "${DOTFILES_ROOT}/config")
+  do
+    dst="$HOME/.config/$(basename "${src}")"
+    link_file "$src" "$dst"
+  done
+}
+
 create_vim_dirs () {
   mkdir -p $HOME/.vimbackup
   mkdir -p $HOME/.vimtmp
@@ -135,8 +148,18 @@ fetch_gitmodules() {
 
 fetch_gitmodules
 install_dotfiles
-create_vim_dirs
-fzf.symlink/install --64 --key-bindings --completion --no-update-rc
-
+install_config_files
 echo ''
 echo '  All symlinks installed!'
+create_vim_dirs
+fzf.symlink/install --64 --key-bindings --completion --no-update-rc
+echo ''
+echo '  FZF installed!'
+# Set global .gitignore
+git config --global core.excludesfile ${DOTFILES_ROOT}/gitignore_global
+./nerd-fonts/install.sh
+echo ''
+echo '  Nerd fonts installed!'
+echo ''
+echo '  Done!'
+
