@@ -13,6 +13,9 @@ export ZSH=$DOTFILES_BASEDIR/oh-my-zsh
 # Customize interactive python shell
 export PYTHONSTARTUP=~/.pythonrc
 
+# user installed python packages
+export PATH=$PATH:${HOME}/.local/bin
+
 # =============================================================================
 #                               non-antigen plugins
 # =============================================================================
@@ -35,7 +38,7 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle paulirish/git-open
-antigen bundle allcatsarebeautiful/fasd
+#antigen bundle allcatsarebeautiful/fasd
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting bundle.
@@ -199,7 +202,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
 
 # powerline
-source $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+source ${HOME}/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # enable thefuck after PS1 is set
 eval $(thefuck --alias)
