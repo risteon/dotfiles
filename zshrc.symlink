@@ -199,7 +199,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
 
 # powerline
-source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
+source $HOME/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # enable thefuck after PS1 is set
 eval $(thefuck --alias)
