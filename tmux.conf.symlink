@@ -1,4 +1,4 @@
-# ~/.tmux.conf
+#e ~/.tmux.conf
 
 # Global settings
 
@@ -61,6 +61,9 @@ set -g pane-base-index 1
 
 # navigate using vim-style keys
 setw -g mode-keys vi
+bind-key -T copy-mode-vi 'v' send-keys -X begin-selection     # Begin selection in copy mode.
+bind-key -T copy-mode-vi 'C-v' send-keys -X rectangle-toggle  # Begin selection in copy mode.
+bind-key -T copy-mode-vi 'y' send-keys -X copy-selection      # Yank selection in copy mode.
 
 # better mnemonics for splitting panes!
 bind | split-window -h
