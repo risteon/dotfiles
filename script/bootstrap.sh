@@ -129,6 +129,10 @@ install_config_files () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
+  if [ "$1" == "BACKUP" ]; then
+    backup_all=true
+  fi
+
   for src in $(find -H "$DOTFILES_ROOT/config" -maxdepth 1 ! -path "${DOTFILES_ROOT}/config")
   do
     dst="$HOME/.config/$(basename "${src}")"
@@ -147,7 +151,7 @@ fetch_gitmodules() {
 }
 
 fetch_gitmodules
-install_dotfiles
+install_dotfiles $1
 install_config_files
 echo ''
 echo '  All symlinks installed!'
