@@ -2,3 +2,11 @@
 **/.idea/
 # Ignore qtcreator project files
 **/CMakeLists.txt.user*
+
+**/.cdsignore
+launch_aws.sh
+**/symLink_temp_storage_ji*
+**/.amlignore
+deploy_azure.sh
+launch_azure.py
+.azureml

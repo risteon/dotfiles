@@ -31,3 +31,4 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 # lazygit (go get github.com/jesseduffield/lazygit)
 alias lg="lazygit"
 
+alias yay="xaz"
