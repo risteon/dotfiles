@@ -226,3 +226,7 @@ if [ -f ~/.localrc ]; then
     source ~/.localrc
 fi
 
+
+#AWSume alias to source the AWSume script
+alias awsume=". awsume"
+fpath=(/usr/local/share/zsh/site-functions $fpath)
