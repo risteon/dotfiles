@@ -202,9 +202,16 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
 
 # powerline
-source ${HOME}/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+powerline_system="/usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh"
+powerline_user="${HOME}/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh"
 
-# enable thefuck after PS1 is set
+if [ -f ${powerline_system} ]; then
+  source ${powerline_system}
+elif [ -f ${powerline_user} ]; then
+  source ${powerline_user}
+fi
+
+# enable thefuck after PS2 is set
 eval $(thefuck --alias)
 
 # =============================================================================
