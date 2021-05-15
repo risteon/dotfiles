@@ -134,18 +134,11 @@ fi
 [ -z "$TMUX" ] && export TERM="rxvt-unicode-256color"
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/lhome/chrrist/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/lhome/chrrist/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/lhome/chrrist/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/lhome/chrrist/anaconda3/bin:$PATH"
-    fi
+# =============================================================================
+#                            local and third party
+# =============================================================================
+# environment variables, local configuration
+if [ -f ~/.localrc ]; then
+    source ~/.localrc
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
