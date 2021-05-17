@@ -171,6 +171,10 @@ autocmd BufReadPost *
 	\ exe "normal! g`\"" |
 	\ endif
 
+" insert log entry
+:nnoremap <F5> "=strftime("---\n\n%H:%M:%S")<CR>P
+:inoremap <F5> <C-R>=strftime("---\n\n%H:%M:%S")<CR>
+
 " POWERLINE SETUP
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
