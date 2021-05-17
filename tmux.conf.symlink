@@ -7,7 +7,7 @@ unbind-key C-b
 set-option -g prefix C-a
 
 #History size
-set-option -g history-limit 5000
+set-option -g history-limit 10000
 
 # Don't let tmux rename windows
 set-window-option -g allow-rename off
