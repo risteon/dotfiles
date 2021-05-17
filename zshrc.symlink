@@ -17,12 +17,6 @@ export PYTHONSTARTUP=~/.pythonrc
 export PATH=$PATH:${HOME}/.local/bin
 
 # =============================================================================
-#                               non-antigen plugins
-# =============================================================================
-
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-
-# =============================================================================
 #                               antigen
 # =============================================================================
 
@@ -140,6 +134,12 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-1]="fg=cyan,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-2]="fg=green,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-3]="fg=magenta,bold"
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]="fg=yellow,bold"
+
+# =============================================================================
+#                               non-antigen plugins
+# =============================================================================
+
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # =============================================================================
 #                         plugin configuration
