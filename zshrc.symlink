@@ -235,6 +235,9 @@ fi
 if [ -f ~/.localrc ]; then
     source ~/.localrc
 fi
+if [ -f ~/.localrc.zsh ]; then
+    source ~/.localrc.zsh
+fi
 
 
 #AWSume alias to source the AWSume script

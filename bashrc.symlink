@@ -141,4 +141,7 @@ fi
 if [ -f ~/.localrc ]; then
     source ~/.localrc
 fi
+if [ -f ~/.localrc.bash ]; then
+    source ~/.localrc.bash
+fi
 
