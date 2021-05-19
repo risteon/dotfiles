@@ -1,0 +1,9 @@
+[user]
+	email = c.rist@posteo.de
+	name = Christoph Rist
+[core]
+	editor = vim
+[merge]
+	tool = kdiff3
+[credential]
+	helper = cache
