@@ -3,7 +3,8 @@
 	name = Christoph Rist
 [core]
 	editor = vim
+	excludesfile = ~/dotfiles/gitignore_global
 [merge]
 	tool = kdiff3
 [credential]
-	helper = cache
+	helper = cache --timeout=28800

@@ -11,10 +11,11 @@
 # 
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+set -eu
+
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
-set -e
 
 echo ''
 
@@ -117,6 +118,10 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
+  if [ "$1" == "BACKUP" ]; then
+    backup_all=true
+  fi
+
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
@@ -150,20 +155,48 @@ fetch_gitmodules() {
   git submodule update --init --recursive
 }
 
+install_nerd_fonts() {
+
+  font_dir="${HOME}/.local/share/fonts/nerd-fonts"
+  mkdir -p "$font_dir"
+  (cd "$font_dir" && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf")
+
+  if [[ -n $(command -v fc-cache) ]]; then
+    fc-cache -vf "$font_dir"
+    
+    case $? in
+      [0-1])
+        # Catch fc-cache returning 1 on a success
+        ;;
+      *)
+        exit $?
+        ;;
+    esac
+  fi
+
+  echo ''
+  echo '  Nerd font installed!'
+}
+
+opt_arg=${1-"none"}
+
 fetch_gitmodules
-install_dotfiles $1
-install_config_files
+install_dotfiles $opt_arg
+install_config_files $opt_arg
 echo ''
 echo '  All symlinks installed!'
+
 create_vim_dirs
+
 fzf.symlink/install --64 --key-bindings --completion --no-update-rc
 echo ''
 echo '  FZF installed!'
+
+install_nerd_fonts
+
 # Set global .gitignore
 git config --global core.excludesfile ${DOTFILES_ROOT}/gitignore_global
-./nerd-fonts/install.sh
-echo ''
-echo '  Nerd fonts installed!'
+
 echo ''
 echo '  Done!'
 
