@@ -180,9 +180,11 @@ install_powerline() {
 
 install_nerd_fonts() {
 
-  font_dir="${HOME}/.local/share/fonts/nerd-fonts"
+  font_dir="${HOME}/.local/share/fonts"
   mkdir -p "$font_dir"
-  (cd "$font_dir" && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf")
+  #(cd "$font_dir" && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf")
+  (cd "$font_dir" && wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip" && unzip SourceCodePro.zip && rm SourceCodePro.zip)
+  (cd "$font_dir" && fc-cache -fv)
 
   if [[ -n $(command -v fc-cache) ]]; then
     fc-cache -vf "$font_dir"
