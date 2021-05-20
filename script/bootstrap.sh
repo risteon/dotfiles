@@ -155,6 +155,29 @@ fetch_gitmodules() {
   git submodule update --init --recursive
 }
 
+install_powerline() {
+  if [[ ! $(command -v python3) ]]; then
+    echo 'python3 not found. Stopping.'
+    exit 1
+  fi
+  
+  if [[ ! $(command -v pip3) ]]; then
+    echo 'pip3 not found. Stopping.'
+    exit 1
+  fi
+  
+  # in user space
+  python3 -m pip install https://github.com/powerline/powerline/archive/refs/tags/2.8.2.tar.gz
+  python3 -m pip install https://github.com/jaspernbrouwer/powerline-gitstatus/archive/refs/tags/v1.3.1.tar.gz
+  
+  # find powerline location
+  powerline_location=$(python3 -c "import pathlib, powerline; print(pathlib.Path(powerline.__file__).parent.absolute())")
+
+  # add this to local rc files
+  printf "# set powerline location\nexport POWERLINE_LOCATION=$powerline_location\n" >> "${HOME}/.localrc.zsh"
+  printf "# set powerline location\nexport POWERLINE_LOCATION=$powerline_location\n" >> "${HOME}/.localrc.bash"
+}
+
 install_nerd_fonts() {
 
   font_dir="${HOME}/.local/share/fonts/nerd-fonts"
@@ -186,6 +209,10 @@ install_config_files $opt_arg
 echo ''
 echo '  All symlinks installed!'
 
+install_powerline
+echo ''
+echo '  Powerline installed!'
+
 create_vim_dirs
 
 fzf.symlink/install --64 --key-bindings --completion --no-update-rc
@@ -193,9 +220,6 @@ echo ''
 echo '  FZF installed!'
 
 install_nerd_fonts
-
-# Set global .gitignore
-git config --global core.excludesfile ${DOTFILES_ROOT}/gitignore_global
 
 echo ''
 echo '  Done!'

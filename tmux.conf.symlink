@@ -26,24 +26,43 @@ set -g visual-activity on
 # 256-colour terminal (tmux needs this to be 'screen')
 set-option -g default-terminal screen-256color
 
-# fiddle with colors of inactive windows
-setw -g window-status-fg cyan
-setw -g window-status-bg colour234
-setw -g window-status-attr dim
+# options based on tmux version
+if-shell -b '[ "$(echo "$TMUX_VERSION < 2.9" | bc)" = 1 ]' " \
+   bind-key -T copy-mode-vi v   send -X begin-selection; \
+   bind-key -T copy-mode-vi V   send -X select-line; \
+   bind-key -T copy-mode-vi C-v send -X rectangle-toggle; \
+   bind-key -T copy-mode-vi y   send -X copy-pipe-and-cancel 'xclip -selection clipboard -in'"
 
-# change color of active window
-setw -g window-status-current-fg white
-setw -g window-status-current-bg colour88
-setw -g window-status-current-attr bright
+# fiddle with colors of inactive windows
+# and change color of active window
+# and set color of regular and active panes
+if-shell -b '[ "$(echo "$TMUX_VERSION < 2.9" | bc)" = 1 ]' \
+  "setw -g window-status-fg cyan; \
+   setw -g window-status-bg colour234; \
+   setw -g window-status-attr dim; \
+   setw -g window-status-current-fg white; \
+   setw -g window-status-current-bg colour88; \
+   setw -g window-status-current-attr bright; \
+   set -g pane-border-fg colour238; \
+   set -g pane-border-bg default; \
+   set -g pane-active-border-fg blue; \
+   set -g pane-active-border-bg default"
+
+
+if-shell -b '[ "$(echo "$TMUX_VERSION >= 2.9" | bc)" = 1 ]' \
+   "set -g message-style fg=red,bg=black; \
+    set -g message-style bright; \
+    set -g window-status-style          fg=cyan,bg=colour234,attr=dim; \
+    set -g window-status-current-style  fg=white,bg=colour88,attr=bright; \
+    set -g window-status-bell-style     fg=red,bg=black; \
+    set -g window-status-activity-style fg=white,bg=black; \
+    set -g pane-border-style            fg=colour238,bg=default; \
+    set -g pane-active-border-style     fg=blue,bg=default"
+
 
 #mouse
 setw -g -q mouse on
 
-# set color of regular and active panes
-set -g pane-border-fg colour238
-set -g pane-border-bg default
-set -g pane-active-border-fg blue
-set -g pane-active-border-bg default
 
 # send the prefix to client inside window
 bind-key C-a send-prefix
@@ -61,9 +80,6 @@ set -g pane-base-index 1
 
 # navigate using vim-style keys
 setw -g mode-keys vi
-bind-key -T copy-mode-vi 'v' send-keys -X begin-selection     # Begin selection in copy mode.
-bind-key -T copy-mode-vi 'C-v' send-keys -X rectangle-toggle  # Begin selection in copy mode.
-bind-key -T copy-mode-vi 'y' send-keys -X copy-selection      # Yank selection in copy mode.
 
 # better mnemonics for splitting panes!
 bind | split-window -h
@@ -115,7 +131,7 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 
 run-shell "powerline-daemon -q"
 
-source "/usr/local/lib/python3.6/dist-packages/powerline/bindings/tmux/powerline.conf"
+source "${POWERLINE_LOCATION}/bindings/tmux/powerline.conf"
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
