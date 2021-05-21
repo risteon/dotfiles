@@ -13,8 +13,8 @@ export ZSH=$DOTFILES_BASEDIR/oh-my-zsh
 # Customize interactive python shell
 export PYTHONSTARTUP=~/.pythonrc
 
-# user installed python packages
-export PATH=$PATH:${HOME}/.local/bin
+# user bin
+export PATH="$PATH:${HOME}/.local/bin"
 
 # =============================================================================
 #                               antigen
@@ -203,7 +203,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # powerline
 powerline_system="/usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh"
-powerline_user="${HOME}/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh"
+#powerline_user="${HOME}/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh"
+powerline_user="${HOME}/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh"
 
 if [ -f ${powerline_system} ]; then
   source ${powerline_system}
