@@ -31,3 +31,6 @@
 [submodule "vim.symlink/bundle/rust.vim"]
 	path = vim.symlink/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "zgen"]
+	path = zgen
+	url = https://github.com/tarjoilija/zgen.git
