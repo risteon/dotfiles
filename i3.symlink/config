@@ -246,6 +246,8 @@ new_window normal 2
 for_window [window_role="pop-up"] floating enable
 for_window [class="google-chrome"] border none
 for_window [class="Google-chrome"] border none
+for_window [class="chromium-browser"] border none
+for_window [class="Chromium-browser"] border none
 for_window [class="konsole"] border none
 for_window [class="Gnome-terminal"] border none
 for_window [class="URxvt"] border none
@@ -261,7 +263,7 @@ client.urgent           $base02 $base08    $base00 $base0F
 
 
 # screenshot
-bindsym Print exec shutter
+bindsym Print exec flameshot gui
 
 
 # compositor, need for vsync!
