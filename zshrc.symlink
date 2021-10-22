@@ -150,6 +150,17 @@ bindkey '^J' autosuggest-accept
 bindkey '^@' autosuggest-execute
 
 # =============================================================================
+#              setup-generated or manual local env vars and setups
+# =============================================================================
+# environment variables, local configuration
+if [ -f ~/.localrc ]; then
+    source ~/.localrc
+fi
+if [ -f ~/.localrc.zsh ]; then
+    source ~/.localrc.zsh
+fi
+
+# =============================================================================
 #                           miscellaneous
 # =============================================================================
 
@@ -201,15 +212,11 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # powerlevel9k
 # source $DOTFILES_BASEDIR/zsh/powerlevel9k.zsh
 
-# powerline
-powerline_system="/usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh"
-#powerline_user="${HOME}/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh"
-powerline_user="${HOME}/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh"
+# powerline from setup-generated env var in localrc
+powerline_binding="${POWERLINE_LOCATION}/bindings/zsh/powerline.zsh"
 
-if [ -f ${powerline_system} ]; then
-  source ${powerline_system}
-elif [ -f ${powerline_user} ]; then
-  source ${powerline_user}
+if [ -f ${powerline_binding} ]; then
+  source ${powerline_binding}
 fi
 
 # enable thefuck after PS2 is set
@@ -226,18 +233,7 @@ eval $(thefuck --alias)
 if [ -f $DOTFILES_BASEDIR/sh_alias ]; then
     source $DOTFILES_BASEDIR/sh_alias
 else
-    print "Warn: ~/dotfiles/sh_alias not found."
-fi
-
-# =============================================================================
-#                            local and third party
-# =============================================================================
-# environment variables, local configuration
-if [ -f ~/.localrc ]; then
-    source ~/.localrc
-fi
-if [ -f ~/.localrc.zsh ]; then
-    source ~/.localrc.zsh
+    print "Warn: $DOTFILES_BASEDIR/sh_alias not found."
 fi
 
 
