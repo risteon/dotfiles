@@ -22,6 +22,7 @@ alias xx="xclip -sel primary"
 alias gka="gitk --all"
 
 alias keyboard='setxkbmap -layout us -variant altgr-intl -option nodeadkeys -option compose:paus && xmodmap ~/dotfiles/xmodmap_switch_caps_esc'
+alias planck='setxkbmap -layout us -variant altgr-intl -option nodeadkeys -option compose:paus'
 
 # fasd
 alias o='a -e xdg-open'

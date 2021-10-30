@@ -272,7 +272,7 @@ exec --no-startup-id compton
 # configure keyboard layout
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option nodeadkeys
 # swap caps lock and ESC key using xmodmap
-exec --no-startup-id xmodmap $HOME/dotfiles/xmodmap_switch_caps_esc
+# exec --no-startup-id xmodmap $HOME/dotfiles/xmodmap_switch_caps_esc
 
 # xroot background image
 exec_always --no-startup-id nitrogen --restore
