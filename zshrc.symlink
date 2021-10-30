@@ -44,6 +44,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Tell Antigen that you're done.
 antigen apply
 
+
 # =============================================================================
 #                               zsh options
 # =============================================================================
@@ -240,3 +241,11 @@ fi
 #AWSume alias to source the AWSume script
 alias awsume=". awsume"
 fpath=(/usr/local/share/zsh/site-functions $fpath)
+
+# =============================================================================
+#                               non-antigen plugins
+# =============================================================================
+# Todo: had to move this to the bottom. Otherwise would only work at a second
+# source or in nested zsh's
+
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
