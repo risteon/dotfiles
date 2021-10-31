@@ -31,6 +31,7 @@ Dependencies
  * xbacklight
  * shutter
  * dmenu
+ * rofi
  * libiw-dev
 
 ```
@@ -44,7 +45,6 @@ $ sudo apt-get install zsh tmux vim-gnome socat rxvt-unicode-256color xautomatio
  * thefuck
  * i3pystatus
  * i3-py
- * quickswitch-i3
  * netifaces
  * basiciw
  * psutil
