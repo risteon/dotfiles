@@ -11,11 +11,6 @@ $ cd dotfiles/script
 $ ./bootstrap
 ```
 
-Clone powerlevel9k theme to oh-my-zsh (currently unused)
-```
-git clone https://github.com/bhilburn/powerlevel9k.git $HOME/dotfiles/oh-my-zsh/custom/themes/powerlevel9k
-```
-
 Dependencies
 ----------------
 
