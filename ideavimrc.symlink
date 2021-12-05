@@ -1,2 +1,9 @@
 nmap gi :action GotoImplementation<CR>
 nnoremap ,c :action GotoClass<CR>
+
+" Use comma as leader
+let mapleader=","
+let g:EasyMotion_leader_key = '<Leader>'
+
+set easymotion
+set ideajoin
