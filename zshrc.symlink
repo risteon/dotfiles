@@ -160,6 +160,13 @@ bindkey '^J' autosuggest-accept
 bindkey '^@' autosuggest-execute
 
 # =============================================================================
+#                   set zsh functions dir (autoloaded when used)
+# =============================================================================
+fpath=( ~/.zfunc "${fpath[@]}" )
+autoload -Uz cnda
+autoload -Uz cndd
+
+# =============================================================================
 #              setup-generated or manual local env vars and setups
 # =============================================================================
 # environment variables, local configuration

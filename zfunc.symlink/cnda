@@ -1,0 +1,1 @@
+conda activate "$(conda info --envs | fzf | awk '{print $1}')"
