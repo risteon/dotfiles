@@ -69,6 +69,10 @@ $ cd ~/.vim/bundle/YouCompleteMe
 $ ./install.py --clang-completer
 ```
 
+### Picom
+
+Build and install picom according to https://github.com/yshui/picom.
+
 ### rxvt-unicode with wide glyph support
 ```
 git clone https://github.com/blueyed/rxvt-unicode.git
@@ -76,7 +80,7 @@ cd rxvt-unicode
 ./configure --prefix=/usr --enable-everything --enable-256-color --disable-perl
 ```
 
-# i3_config
+# [Legacy] i3_config
 
 Configuration files and install notes for the i3 window manager and additonal programs. For Ubuntu 16.04. Xenial.
 
