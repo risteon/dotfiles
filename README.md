@@ -73,6 +73,14 @@ $ ./install.py --clang-completer
 
 Build and install picom according to https://github.com/yshui/picom.
 
+### Polybar
+
+Download release (tested 3.5.7) and build https://github.com/polybar/polybar/wiki/Compiling.
+
+### Alacritty
+
+Build from source.
+
 ### rxvt-unicode with wide glyph support
 ```
 git clone https://github.com/blueyed/rxvt-unicode.git
