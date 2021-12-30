@@ -212,17 +212,23 @@ install_config_files $opt_arg
 echo ''
 echo '  All symlinks installed!'
 
-install_powerline
-echo ''
-echo '  Powerline installed!'
+read -p "Continue with download and installation? [yN] " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  install_powerline
+  echo ''
+  echo '  Powerline installed!'
 
-create_vim_dirs
+  create_vim_dirs
 
-fzf.symlink/install --key-bindings --completion --no-update-rc
-echo ''
-echo '  FZF installed!'
+  fzf.symlink/install --key-bindings --completion --no-update-rc
+  echo ''
+  echo '  FZF installed!'
 
-install_nerd_fonts
+  install_nerd_fonts
+
+fi
 
 echo ''
 echo '  Done!'
