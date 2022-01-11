@@ -1,5 +1,6 @@
 nmap gi :action GotoImplementation<CR>
 nnoremap ,c :action GotoClass<CR>
+nnoremap ,f :action GotoFile<CR>
 
 " Use comma as leader
 let mapleader=","
