@@ -6,6 +6,9 @@
 	excludesfile = ~/dotfiles/gitignore_global
 [merge]
 	tool = kdiff3
+[alias]
+  lol = log --graph --decorate --pretty=oneline --abrev-commit --all
+  whatadded = log --diff-filter=A
 [pull]
 	ff = only
 [credential]
