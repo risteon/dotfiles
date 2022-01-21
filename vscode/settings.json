@@ -1,0 +1,12 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "terminal.integrated.inheritEnv": false,
+    "vscode-neovim.neovimExecutablePaths.linux": "/lhome/chrrist/.local/bin/nvim",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+}
