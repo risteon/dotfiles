@@ -9,4 +9,5 @@
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
+    "files.autoSave": "onFocusChange",
 }
