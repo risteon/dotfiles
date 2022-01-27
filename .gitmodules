@@ -34,3 +34,6 @@
 [submodule "zgen"]
 	path = zgen
 	url = https://github.com/tarjoilija/zgen.git
+[submodule "config/nvim/bundle/Vundle.vim"]
+	path = config/nvim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
