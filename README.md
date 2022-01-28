@@ -11,7 +11,7 @@ $ cd dotfiles/script
 $ ./bootstrap
 ```
 
-Dependencies
+Tools and Dependencies
 ----------------
 
 ### Dependencies (apt)
@@ -44,9 +44,11 @@ $ sudo apt-get install zsh tmux vim-gnome socat rxvt-unicode-256color xautomatio
  * basiciw
  * psutil
  * colour
+ * autorandr
 
 ```
 $ sudo pip3 install powerline-status powerline-gitstatus thefuck i3pystatus i3-py quickswitch-i3 netifaces basiciw psutil colour
+$ pip3 install --user autorandr
 ```
 
 ### Clone Tmux Plugin Manager
