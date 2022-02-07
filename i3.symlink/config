@@ -276,7 +276,8 @@ bindsym Print exec flameshot gui
 
 
 # compositor, need for vsync!
-exec --no-startup-id compton
+exec --no-startup-id xsettingsd
+exec picom --experimental-backends
 
 # configure keyboard layout
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option nodeadkeys
