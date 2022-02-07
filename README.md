@@ -83,6 +83,10 @@ Download release (tested 3.5.7) and build https://github.com/polybar/polybar/wik
 
 Build from source.
 
+### i3-gaps
+
+On Ubuntu 18.04, install from PPA https://launchpad.net/~regolith-linux/+archive/ubuntu/release
+
 ### rxvt-unicode with wide glyph support
 ```
 git clone https://github.com/blueyed/rxvt-unicode.git
