@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-    i3lock -c 222244
+    i3lock -i /lhome/chrrist/dotfiles/assets/wide_ultra_ocean_by_ocean_trevor_mccarthy_scaled.png
 }
 
 turn_off_monitor() {
