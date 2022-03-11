@@ -10,4 +10,5 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "files.autoSave": "onFocusChange",
+    "keyboard.dispatch": "keyCode",
 }
