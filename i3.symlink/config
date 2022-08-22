@@ -37,7 +37,7 @@ font pango:DejaVu Sans Mono 8
 
 # Enable the gaps!!
 for_window [class=".*"] border pixel 0
-gaps inner 8
+gaps inner 12
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
