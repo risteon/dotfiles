@@ -290,7 +290,7 @@ exec --no-startup-id /usr/local/bin/powerline-daemon -q
 
 # Start i3bar to display a workspace bar (plus the system information i3pystatus)
 bar {
-    status_command    python3 ~/.i3/pystatus_conf.py
+    status_command    python3 ~/.config/sway/pystatus_conf.py
     position          bottom
     workspace_buttons yes
 
