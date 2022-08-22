@@ -13,7 +13,7 @@ status.register("clock",
 status.register("load")
 
 status.register("cpu_usage_bar",)
-status.register("cpu_usage",)
+# status.register("cpu_usage", format="{usage:02}%")
 
 # Memory
 status.register("mem_bar",)
