@@ -166,9 +166,9 @@ install_powerline() {
     exit 1
   fi
   
-  # in user space
-  python3 -m pip install https://github.com/powerline/powerline/archive/refs/tags/2.8.2.tar.gz
-  python3 -m pip install https://github.com/jaspernbrouwer/powerline-gitstatus/archive/refs/tags/v1.3.1.tar.gz
+  # system-wide
+  sudo -E -H python3 -m pip install https://github.com/powerline/powerline/archive/refs/tags/2.8.2.tar.gz
+  sudo -E -H python3 -m pip install https://github.com/jaspernbrouwer/powerline-gitstatus/archive/refs/tags/v1.3.1.tar.gz
   
   # find powerline location
   powerline_location=$(python3 -c "import pathlib, powerline; print(pathlib.Path(powerline.__file__).parent.absolute())")
@@ -176,6 +176,22 @@ install_powerline() {
   # add this to local rc files
   printf "# set powerline location\nexport POWERLINE_LOCATION=$powerline_location\n" >> "${HOME}/.localrc.zsh"
   printf "# set powerline location\nexport POWERLINE_LOCATION=$powerline_location\n" >> "${HOME}/.localrc.bash"
+}
+
+install_i3pystatus() {
+  if [[ ! $(command -v python3) ]]; then
+    echo 'python3 not found. Stopping.'
+    exit 1
+  fi
+  
+  if [[ ! $(command -v pip3) ]]; then
+    echo 'pip3 not found. Stopping.'
+    exit 1
+  fi
+  
+  # system-wide
+  sudo apt install -y libiw-dev
+  sudo -E -H python3 -m pip install i3pystatus colour basiciw
 }
 
 install_nerd_fonts() {
@@ -217,6 +233,10 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   install_powerline
+  echo ''
+  echo '  Powerline installed!'
+
+  install_i3pystatus
   echo ''
   echo '  Powerline installed!'
 
