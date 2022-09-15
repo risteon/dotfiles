@@ -21,7 +21,6 @@ Tools and Dependencies
  * socat (for powerline)
  * xautomation
  * xbindkeys
- * URxvt terminal emulator
  * feh, nitrogen
  * xbacklight
  * shutter
@@ -29,9 +28,13 @@ Tools and Dependencies
  * rofi
  * libiw-dev
  * redshift
+ * light
 
 ```
-$ sudo apt-get install zsh tmux vim-gnome socat rxvt-unicode-256color xautomation xbindkeys feh nitrogen xbacklight shutter xautomation xbindkeys suckless-tools libiw-dev
+$ sudo apt-get install \
+    zsh tmux vim-gnome socat rxvt-unicode-256color \
+    xautomation xbindkeys feh nitrogen xbacklight \
+    shutter xautomation xbindkeys suckless-tools libiw-dev light
 ```
 
 ### Dependencies (PyPI)
@@ -87,6 +90,14 @@ Build from source.
 ### i3-gaps
 
 On Ubuntu 18.04, install from PPA https://launchpad.net/~regolith-linux/+archive/ubuntu/release.
+
+### Alacritty
+
+See project on github. Follow install instructions and build from source.
+
+### light
+
+Add user to video group `sudo usermod -a -G video $USER`
 
 ### rxvt-unicode with wide glyph support
 ```
