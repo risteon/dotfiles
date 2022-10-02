@@ -165,6 +165,8 @@ bindkey '^@' autosuggest-execute
 fpath=( ~/.zfunc "${fpath[@]}" )
 autoload -Uz cnda
 autoload -Uz cndd
+autoload -Uz drunc
+autoload -Uz buttervolume
 
 # =============================================================================
 #              setup-generated or manual local env vars and setups
