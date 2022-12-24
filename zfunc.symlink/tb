@@ -1,0 +1,9 @@
+logdir_spec=""
+for dir in $@; do
+    # Use the folder name as the name for the logdir_spec entry
+    name=$(basename $dir)
+    logdir_spec="${logdir_spec},${name}:$dir"
+done
+logdir_spec=${logdir_spec:1}  # remove leading ','
+command tensorboard --logdir_spec="$logdir_spec" --host 0.0.0.0
+
