@@ -12,8 +12,8 @@ status.register("clock",
 # (the default value for format is used)
 status.register("load")
 
-status.register("cpu_usage_bar",)
-status.register("cpu_usage",)
+status.register("cpu_usage_bar")
+status.register("cpu_usage")
 
 # Memory
 status.register("mem_bar",)
