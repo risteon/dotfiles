@@ -11,4 +11,8 @@
     "editor.wordWrapColumn": 120,
     "files.autoSave": "onFocusChange",
     "keyboard.dispatch": "keyCode",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
 }
