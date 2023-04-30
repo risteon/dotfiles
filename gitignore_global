@@ -2,6 +2,9 @@
 **/.idea/
 # Ignore qtcreator project files
 **/CMakeLists.txt.user*
+# Ignore VScode workspace files
+**/*.code-workspace
+**/.vscode
 
 **/.cdsignore
 launch_aws.sh
