@@ -81,9 +81,9 @@ set -g pane-base-index 1
 # navigate using vim-style keys
 setw -g mode-keys vi
 
-# better mnemonics for splitting panes!
-bind | split-window -h
-bind - split-window -v
+# better mnemonics for splitting panes. Open in current directory.
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 
 # vim / xmonad style bindings for pane movement
 bind -r h select-pane -L
