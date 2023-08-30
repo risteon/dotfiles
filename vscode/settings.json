@@ -15,4 +15,17 @@
         "language-julia.interrupt"
     ],
     "julia.symbolCacheDownload": true,
+    "[python]": {
+    },
+    "python.linting.flake8Args": [
+        "--max-line-length=88"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.local/bin/black",
+    "black-formatter.importStrategy": "fromEnvironment",
+    "json.format.enable": false,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "BUILD": "bat"
+    },
 }
