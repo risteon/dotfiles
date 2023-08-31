@@ -28,6 +28,7 @@ Tools and Dependencies
  * dmenu
  * rofi
  * libiw-dev
+ * thefuck
 
 ```
 $ sudo apt-get install zsh tmux vim-gnome socat rxvt-unicode-256color xautomation xbindkeys feh nitrogen xbacklight shutter xautomation xbindkeys suckless-tools libiw-dev
@@ -37,7 +38,6 @@ $ sudo apt-get install zsh tmux vim-gnome socat rxvt-unicode-256color xautomatio
 
  * powerline-status
  * powerline-gitstatus
- * thefuck
  * i3pystatus
  * i3-py
  * netifaces
