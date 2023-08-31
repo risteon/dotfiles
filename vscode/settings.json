@@ -4,10 +4,16 @@
         "*.ipynb": "jupyter.notebook.ipynb"
     },
     "terminal.integrated.inheritEnv": false,
-    "vscode-neovim.neovimExecutablePaths.linux": "/lhome/chrrist/.local/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
     "terminal.integrated.shell.osx": "/bin/zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
     "files.autoSave": "onFocusChange",
+    "glassit-linux.opacity": 90,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "jupyter.askForKernelRestart": false,
+    "julia.symbolCacheDownload": true,
 }
