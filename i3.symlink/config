@@ -36,16 +36,16 @@ font pango:DejaVu Sans Mono 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Enable the gaps!!
-for_window [class=".*"] border pixel 0
-gaps inner 10
-gaps outer 5
+# for_window [class=".*"] border pixel 0
+# gaps inner 10
+# gaps outer 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 # smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders no_gaps
+# smart_borders no_gaps
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
