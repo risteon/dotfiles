@@ -47,6 +47,10 @@ font pango:DejaVu Sans Mono 8
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 # smart_borders no_gaps
 
+# don't focus windows upon opening or request
+no_focus [window_role="pop-up"]
+focus_on_window_activation urgent
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
