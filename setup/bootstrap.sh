@@ -41,7 +41,9 @@ fail () {
 link_file () {
   local src=$1 dst=$2
 
-  local overwrite= backup= skip=
+  local overwrite=
+  local backup=
+  local skip=
   local action=
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
@@ -120,6 +122,10 @@ install_dotfiles () {
 
   if [ "$1" == "BACKUP" ]; then
     backup_all=true
+  elif [ "$1" == "OVERWRITE" ]; then
+    overwrite_all=true
+  elif [ "$1" == "SKIP" ]; then
+    skip_all=true
   fi
 
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
@@ -136,6 +142,10 @@ install_config_files () {
 
   if [ "$1" == "BACKUP" ]; then
     backup_all=true
+  elif [ "$1" == "OVERWRITE" ]; then
+    overwrite_all=true
+  elif [ "$1" == "SKIP" ]; then
+    skip_all=true
   fi
 
   for src in $(find -H "$DOTFILES_ROOT/config" -maxdepth 1 ! -path "${DOTFILES_ROOT}/config")
@@ -220,17 +230,32 @@ install_nerd_fonts() {
   echo '  Nerd fonts installed!'
 }
 
+usage () {
+  echo "$(basename "$0") [-h] [-m MODE] [-f]"
+}
+
+duplicate_mode="ask"
+full_install=0
+while getopts "fhm:" opt; do
+  case $opt in 
+    f ) full_install=1;;
+    m ) duplicate_mode=$OPTARG;;
+    h ) usage
+    exit 0;;
+    *) usage
+    exit 1;;
+  esac
+done
+
 opt_arg=${1-"none"}
 
 fetch_gitmodules
-install_dotfiles $opt_arg
-install_config_files $opt_arg
+install_dotfiles $duplicate_mode
+install_config_files $duplicate_mode
 echo ''
 echo '  All symlinks installed!'
 
-read -p "Continue with download and installation? [yN] " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ "$full_install" == 1 ]]
 then
   install_powerline
   echo ''
