@@ -166,6 +166,7 @@ fpath=( ~/.zfunc "${fpath[@]}" )
 autoload -Uz cnda
 autoload -Uz cndd
 autoload -Uz drunc
+autoload -Uz git-list-author-lines
 autoload -Uz tb
 autoload -Uz buttervolume
 
