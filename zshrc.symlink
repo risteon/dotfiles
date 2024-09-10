@@ -222,12 +222,10 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # oh-my-zsh
 # source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/catppuccin_macchiato.omp.json)"
 
 # enable thefuck after PS2 is set
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # =============================================================================
 #                                 aliases
@@ -245,14 +243,11 @@ fi
 
 
 #AWSume alias to source the AWSume script
-alias awsume=". awsume"
-fpath=(/usr/local/share/zsh/site-functions $fpath)
+#alias awsume=". awsume"
+#fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 # =============================================================================
 #                               non-antigen plugins
 # =============================================================================
-# Todo: had to move this to the bottom. Otherwise would only work at a second
-# source or in nested zsh's
-
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+source <(fzf --zsh)
 
