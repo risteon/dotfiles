@@ -131,7 +131,7 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 
 run-shell "powerline-daemon -q"
 
-source "${POWERLINE_LOCATION}/bindings/tmux/powerline.conf"
+source "/usr/share/powerline/bindings/tmux/powerline.conf"
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
