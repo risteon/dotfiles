@@ -161,6 +161,7 @@ autoload -Uz drunc
 autoload -Uz git-list-author-lines
 autoload -Uz tb
 autoload -Uz buttervolume
+autoload -Uz y
 
 # =============================================================================
 #              setup-generated or manual local env vars and setups
