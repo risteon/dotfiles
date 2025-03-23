@@ -2,6 +2,8 @@
 **/.idea/
 # Ignore qtcreator project files
 **/CMakeLists.txt.user*
+# Vscode
+.vscode/launch.json
 
 **/.cdsignore
 launch_aws.sh
