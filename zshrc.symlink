@@ -107,6 +107,7 @@ SAVEHIST=100000
 setopt autocd                   # Allow changing directories without `cd`
 setopt append_history           # Dont overwrite history
 setopt extended_history         # Also record time and duration of commands.
+setopt extended_glob            # Zsh own globbing
 setopt share_history            # Share history between multiple shells
 setopt hist_expire_dups_first   # Clear duplicates when trimming internal hist.
 setopt hist_find_no_dups        # Dont display duplicates during searches.
