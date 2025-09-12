@@ -224,7 +224,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # oh-my-zsh
 # source $ZSH/oh-my-zsh.sh
 
-eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/catppuccin_macchiato.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/emodipt-extend.omp.json)"
 
 # enable thefuck after PS2 is set
 # eval $(thefuck --alias)
